@@ -13,10 +13,10 @@ void PID::Init(double Kp, double Ki, double Kd) {
     this->Ki = Ki; // integral gain
     this->Kd = Kd; // differential gain
 
-    p_error = d_error = i_error = 1.0;
+    p_error = d_error = i_error = 0.0;
 
     // iterations
-    iterations = 100;
+    iterations = 0;
 
     // tolerance
     tolerance = 0.01;

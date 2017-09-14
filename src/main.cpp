@@ -71,8 +71,8 @@ int main() {
                     pid_steering.UpdateError(cte);
                     steer_value = -1 * pid_steering.Kp * pid_steering.p_error - pid_steering.Kd * pid_steering.d_error - pid_steering.Ki * pid_steering.i_error;
 
-                    // pid_throttle.UpdateError(cte);
-                    // throttle_value = pid_throttle.TotalError();
+                    // pid_throttle.UpdateError(fabs(cte));
+                    // throttle_value = .8 - pid_throttle.Kp * pid_throttle.p_error - pid_throttle.Kd * pid_throttle.d_error - pid_throttle.Ki * pid_throttle.i_error;
 
 
                     // DEBUG
@@ -81,7 +81,7 @@ int main() {
 
                     json msgJson;
                     msgJson["steering_angle"] = steer_value;
-                    msgJson["throttle"] = 0.5;
+                    msgJson["throttle"] = .3;
                     auto msg = "42[\"steer\"," + msgJson.dump() + "]";
                     std::cout << msg << std::endl;
                     ws.send(msg.data(), msg.length(), uWS::OpCode::TEXT);
