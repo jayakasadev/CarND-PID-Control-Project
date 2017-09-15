@@ -6,16 +6,30 @@ private:
 
     // twiddle parameters
     double tolerance;
-    int iterations;
+    // int iterations;
     double best_error;
+    short count;
+
+    bool p_add;
+    bool i_add;
+    bool d_add;
+
+    bool p_subtract;
+    bool i_subtract;
+    bool d_subtract;
+
+    double total_error;
 
     /**
      * Method implements twiddle algorithm for paramter optimization
      *
-     * @param p
-     * @param dp
+     * @param cte
+     * @param calculated
+     * @param gain
+     * @param add
+     * @param subtract
      */
-    void twiddle(double &p, double &dp);
+    void twiddle(double cte, double &calculated, double &gain, bool &add, bool &subtract);
 
 public:
 
