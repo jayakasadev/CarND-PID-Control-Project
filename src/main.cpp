@@ -38,10 +38,8 @@ int main() {
 
     PID pid_steering, pid_throttle; //
     // TODO: Initialize the pid variable.
-    pid_steering.Init(0.2, 0.004, 3.0); // took these from the udacity module
-    // pid_throttle.Init(0.2, 0.004, 3.0); // took these from the udacity module
-    // pid_steering.Init(0, 0, 0); // twiddle
-    // pid_throttle.Init(0, 0, 0); // twiddle
+    // pid_steering.Init(0.2, 0.004, 3.0); // took these from the udacity module
+    pid_steering.Init(0.1, 0.01, 3.5); // after manual experimentation
 
     h.onMessage([&pid_steering](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
         // "42" at the start of the message means there's a websocket message event.
