@@ -1,9 +1,9 @@
 # PID Controller
-THe goal of this project is to implement a PID controller to help a car drive around a simulated track autonomously. The model receives a Cross Track Error value which is used to calculate the returned steering angle and throttle values. 
+The goal of this project is to implement a PID controller to help a car drive around a simulated track autonomously. The model receives a Cross Track Error value which is used to calculate the returned steering angle and throttle values. 
 
 My current approach is to experiment with possible values for P, I and D gain values manually at first in order to reach an optimal starting point to run Twiddle or SGD or another optimization algorithm. This is done because when the values are too large, the vehicle immediately spins out of control or drives off the road.   
 
-The approach is not optimal for real world usage because it does not take into account the physics of movement or the physics of the vehicle. However, it works great as a controller for small vehicles with limited processing power.  
+The approach is not optimal for real world usage because it does not take into account the physics of movement or the physics of the vehicle. However, it works great as a controller for small vehicles with limited processing power.
 ---
 
 ## Dependencies
